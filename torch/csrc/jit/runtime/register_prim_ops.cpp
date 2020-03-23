@@ -283,8 +283,8 @@ int64_t normalizeIndex(int64_t idx, int64_t list_size) {
   return idx;
 }
 
-RegisterOperators reg({
-     Operator(
+RegisterOperators reg(
+    {Operator(
          "prim::rangelist(int n) -> int[]",
          [](Stack& stack) {
            int64_t n;
@@ -1011,8 +1011,6 @@ RegisterOperators reg({
            return 0;
          },
          aliasAnalysisSpecialCase())});
-
-
 
 // define implementations for primitive number ops
 #define DEFINE_GENERIC_OP(aten_op, int_op, float_op, int_result, float_result) \

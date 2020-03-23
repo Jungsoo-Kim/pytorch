@@ -748,8 +748,7 @@ void initPythonIRBindings(PyObject* module_) {
       .def(py::init([](TypePtr a) { return RRefType::create(a); }))
       .def("getElementType", &RRefType::getElementType);
 
-  py::class_<FutureType, Type, std::shared_ptr<FutureType>>(
-      m, "FutureType")
+  py::class_<FutureType, Type, std::shared_ptr<FutureType>>(m, "FutureType")
       .def(py::init([](TypePtr a) { return FutureType::create(a); }))
       .def("getElementType", &FutureType::getElementType);
 
